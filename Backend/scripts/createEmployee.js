@@ -14,7 +14,7 @@ async function createEmployee(username, password) {
     const newEmployee = new Employee({
       username,
       password,  // Pass the plain password; it will be hashed by the schema middleware
-      role: 'employee'
+      role: "employee"
     });
 
     await newEmployee.save();
