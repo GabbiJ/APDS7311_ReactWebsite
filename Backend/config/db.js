@@ -1,22 +1,3 @@
-/*const mongoose = require("mongoose");
-
-// Load environment variables
-require("dotenv").config();
-
-// Database connection
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.ATLAS_URI); // Remove deprecated options
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1); // Exit process if database connection fails
-  }
-};
-
-// Call the connectDB function
-//connectDB();
-module.exports = connectDB; // Ensure connectDB is exported*/
 
 
 const mongoose = require("mongoose");

@@ -14,9 +14,14 @@ exports.registerUser = async (req, res) => {
     const sanitizedIdNumber = sanitizeInput(idNumber.trim());
     const sanitizedPassword = sanitizeInput(password.trim());
 
-    const userExists = await User.findOne({ accountNumber });
-    if (userExists) {
-      return res.status(400).json({ message: "User already exists" });
+    const userAccExists = await User.findOne({ accountNumber });
+    if (userAccExists) {
+      return res.status(400).json({ message: "User Account already exists" });
+    }
+
+    const userIDExists = await User.findOne({ idNumber });
+    if (userIDExists) {
+      return res.status(400).json({ message: "User ID already exists" });
     }
 
     // No need to hash the password here, it will be hashed in the pre-save hook
