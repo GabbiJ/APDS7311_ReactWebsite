@@ -57,7 +57,7 @@ describe("POST /api/users/register", () => {
       });
 
     expect(response.status).toBe(400);
-    expect(response.body).toHaveProperty("message", "User already exists");
+    expect(response.body).toHaveProperty("message", "User Account already exists");
   });
 
   test("should fail if fullName contains invalid characters", async () => {
