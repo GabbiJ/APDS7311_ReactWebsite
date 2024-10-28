@@ -27,7 +27,7 @@ async function createEmployee(username, password) {
 }
 
 // Replace these with the new employee's credentials
-const username = "employee3";
+const username = "employee5";
 const password = "password123";
 
 createEmployee(username, password);
