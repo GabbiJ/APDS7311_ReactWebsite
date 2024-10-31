@@ -40,30 +40,35 @@ function LoginEmp() {
 
     return (
         <div className="container">
-            <h2>Employee Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Username:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+            <form class="form" onSubmit={handleSubmit}>
+
+                <div class="form-group">
+                    <h1 className="form-title" >Employee Login</h1>
+                    <div class="input-container">
+                        <input
+                            type="text"
+                            placeholder="Username"
+                            className="form-control"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                    </div>
                 </div>
                 <div className="form-group">
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
+                    <div class="input-container">
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            className="form-control"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </div>
                 </div>
                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                <button type="submit" className="submit-button">
+                <button type="submit" className="submit">
                     Login
                 </button>
             </form>

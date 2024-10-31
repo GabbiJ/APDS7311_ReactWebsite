@@ -41,9 +41,9 @@ const Register = () => {
     };
 
     return (
-        <div>
-            <h1 class = "title" >Registration</h1>
+        <div class = "container">            
             <form class="form" onSubmit={handleSubmit}>
+                <h1 class = "title" >Registration</h1>
                 <label>
                     <div class="flex">
                         <input
