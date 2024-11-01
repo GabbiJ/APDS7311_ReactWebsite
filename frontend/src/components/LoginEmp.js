@@ -1,12 +1,16 @@
 // login form for employee
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Login.css';
 
 function LoginEmp() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    //initialising navigation
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -33,6 +37,8 @@ function LoginEmp() {
 
             alert('Login successful!');
             // Redirect or display employee dashboard
+            navigate('/employee-home');
+
         } catch (error) {
             setError(error.message);
         }

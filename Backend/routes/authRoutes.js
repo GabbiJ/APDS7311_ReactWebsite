@@ -33,9 +33,12 @@ router.post("/employee-login", empValidateInput, async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid password" });
     }
-    res.status(200).json({ message: "Employee login successfull" });
+    
+
     const token = jwt.sign({ id: employee._id, role: employee.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
-    res.json({ token });
+    //res.json({ token });
+    
+    res.status(200).json({ message: "Employee login successfull", token });
   } catch (error) {
     res.status(500).json({ message: "Error logging in" });
   }

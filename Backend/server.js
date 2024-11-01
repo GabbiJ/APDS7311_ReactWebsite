@@ -15,7 +15,6 @@ const path = require("path");
 const employeeRoutes = require("./routes/employeeRoutes");
 
 
-
 // Load environment variables
 if (process.env.NODE_ENV === "test") {
   dotenv.config({ path: ".env.test" }); // Load test environment variables
@@ -26,6 +25,9 @@ if (process.env.NODE_ENV === "test") {
 
 // Initialize Express app
 const app = express();
+
+//setting trust proxy
+app.set('trust proxy', 1);
 
 app.use("/api/employee", employeeRoutes);
 // Connect to database
