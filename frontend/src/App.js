@@ -5,6 +5,8 @@ import Register from './components/Register';
 import LoginEmp from './components/LoginEmp';
 import EmployeeHome from './components/HomeEmp';
 import GreetingPage from './components/GreetingPage';
+import LoginCust from './components/LoginCust';
+import CustPayment from './components/CustPayment';
 import './App.css'
 
 // Function to check if the user is authenticated
@@ -17,6 +19,9 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/employee-login" element={<LoginEmp />} />
                 <Route path="/greeting-page" element={<GreetingPage />} />
+                <Route path="/login" element={<LoginCust/>} />
+                <Route path="/make" element={<CustPayment/>}/>
+                
                 <Route
                     path="/employee-home"
                     element={isAuthenticated() ? <EmployeeHome /> : <Navigate to="/employee-login" />}
