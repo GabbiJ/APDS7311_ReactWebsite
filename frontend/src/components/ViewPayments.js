@@ -1,15 +1,14 @@
-//viewing unverified payments
 import React, { useEffect, useState } from 'react';
 
 function ViewPayments() {
     const [payments, setPayments] = useState([]);
     const [error, setError] = useState(null);
 
-    // Replace with actual JWT token for authorized access
-    const jwtToken = "your_jwt_token_here";
+    // Get JWT token for authorized access
+    const jwtToken = localStorage.getItem('employeeToken');
 
+    // Fetch unverified payments from API on component mount
     useEffect(() => {
-        // Fetch payments list from API
         const fetchPayments = async () => {
             try {
                 const response = await fetch('/api/employee/payments', {
@@ -34,6 +33,32 @@ function ViewPayments() {
         fetchPayments();
     }, [jwtToken]);
 
+    // Function to handle payment verification
+    const verifyPayment = async (paymentId) => {
+        try {
+            const response = await fetch(`/api/employee/payments/${paymentId}/verify`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${jwtToken}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to verify payment');
+            }
+
+            const data = await response.json();
+            alert(data.message); // Show verification success message
+
+            // Update the state to remove the verified payment from the list
+            setPayments(payments.filter(payment => payment._id !== paymentId));
+
+        } catch (err) {
+            setError(err.message);
+        }
+    };
+
     return (
         <div>
             <h2>Unverified Payments</h2>
@@ -50,6 +75,7 @@ function ViewPayments() {
                             <p><strong>Payee Account Number:</strong> {payment.payeeAccountNumber}</p>
                             <p><strong>Payee Account Owner:</strong> {payment.payeeAccountOwner}</p>
                             <p><strong>Swift Code:</strong> {payment.swiftCode}</p>
+                            <button onClick={() => verifyPayment(payment._id)}>Verify</button>
                             <hr />
                         </li>
                     ))}
