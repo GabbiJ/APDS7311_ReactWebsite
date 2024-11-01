@@ -140,3 +140,7 @@
     left: -10px;
     transform: scale(1.2);
   }
+
+  .heading {
+    font-size: 60px;
+  }
