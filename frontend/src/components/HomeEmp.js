@@ -16,16 +16,18 @@ function EmployeeHome() {
     }, [jwtToken, navigate]);
 
     return (
-        <div>
-            <h1>Employee Home</h1>
-            <div className="anim-container">
-                <div className="anim-card" onClick={() => navigate('/view-verified-payments')}>View Verified Payments</div>
+        <div className="container">
+            <h1 className="heading">Employee Home</h1>
+            <div className="container">
+                <div className="anim-container">
+                    <div className="anim-card" onClick={() => navigate('/view-verified-payments')}>View Verified Payments</div>
 
-            </div>
-            <br/>
-            <br/>
-            <div className="anim-container-blue">
-                <div className="anim-card-blue" onClick={() => navigate('/view-payments')}>View All Unverified Payments</div>
+                </div>
+                <br />
+                <br />
+                <div className="anim-container-blue">
+                    <div className="anim-card-blue" onClick={() => navigate('/view-payments')}>View All Unverified Payments</div>
+                </div>
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
-// src/components/PaymentsList.js
+//viewing unverified payments
 import React, { useEffect, useState } from 'react';
 
-function PaymentsList() {
+function ViewPayments() {
     const [payments, setPayments] = useState([]);
     const [error, setError] = useState(null);
 
@@ -12,7 +12,7 @@ function PaymentsList() {
         // Fetch payments list from API
         const fetchPayments = async () => {
             try {
-                const response = await fetch('https://localhost:443/api/employee/verified-payments', {
+                const response = await fetch('/api/employee/payments', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${jwtToken}`,
@@ -36,7 +36,7 @@ function PaymentsList() {
 
     return (
         <div>
-            <h2>Verified Payments</h2>
+            <h2>Unverified Payments</h2>
             {error ? (
                 <p style={{ color: 'red' }}>Error: {error}</p>
             ) : (
@@ -59,4 +59,4 @@ function PaymentsList() {
     );
 }
 
-export default PaymentsList;
+export default ViewPayments;
