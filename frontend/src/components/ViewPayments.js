@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../ViewPayments.css';
 
 function ViewPayments() {
     const [payments, setPayments] = useState([]);
@@ -60,14 +61,14 @@ function ViewPayments() {
     };
 
     return (
-        <div>
-            <h2>Unverified Payments</h2>
+        <div className="container">
+            <h1>Unverified Payments</h1>
             {error ? (
                 <p style={{ color: 'red' }}>Error: {error}</p>
             ) : (
-                <ul>
+                <ul >
                     {payments.map((payment, index) => (
-                        <li key={index}>
+                        <li className="soft-rounded-card" key={index}>
                             <p><strong>Payer Account Number:</strong> {payment.payerAccountNumber}</p>
                             <p><strong>Amount:</strong> {payment.amount}</p>
                             <p><strong>Currency:</strong> {payment.currency}</p>
@@ -75,7 +76,9 @@ function ViewPayments() {
                             <p><strong>Payee Account Number:</strong> {payment.payeeAccountNumber}</p>
                             <p><strong>Payee Account Owner:</strong> {payment.payeeAccountOwner}</p>
                             <p><strong>Swift Code:</strong> {payment.swiftCode}</p>
-                            <button onClick={() => verifyPayment(payment._id)}>Verify</button>
+                            <div className="container">
+                                <button onClick={() => verifyPayment(payment._id)}>Verify</button>
+                            </div>
                             <hr />
                         </li>
                     ))}

@@ -43,11 +43,12 @@ const Register = () => {
     return (
         <div class = "container">            
             <form class="form" onSubmit={handleSubmit}>
+            <div className="form-group">
                 <h1 class = "title" >Registration</h1>
                 <label>
-                    <div class="flex">
+                <div className="input-container">
                         <input
-                            class="input"
+                            className="form-control"
                             type="text"
                             name="fullName"
                             placeholder="Full Name"
@@ -57,12 +58,13 @@ const Register = () => {
                         />
                     </div>
                 </label>
+                </div>
 
                 <label>
-                    <div class="flex">
+                    <div className="input-container">
                         <input
                             type="text"
-                            class="input"
+                            className="form-control"
                             name="idNumber"
                             placeholder="ID Number"
                             value={formData.idNumber}
@@ -73,10 +75,10 @@ const Register = () => {
                 </label>
 
                 <label>
-                    <div class="flex">
+                    <div className="input-container">
                         <input
                             type="text"
-                            class="input"
+                            className="form-control"
                             name="accountNumber"
                             placeholder="Account Number"
                             value={formData.accountNumber}
@@ -87,10 +89,10 @@ const Register = () => {
                 </label>
 
                 <label>
-                    <div class="flex">
+                    <div className="input-container">
                         <input
                             type="password"
-                            class="input"
+                            className="form-control"
                             name="password"
                             placeholder="Password"
                             value={formData.password}

@@ -88,6 +88,11 @@ function Login() {
       <button type="submit" className="submit">
         Login
       </button>
+
+      <p class="signup-link" >
+        No account?
+        <a onClick={() => navigate('/Register')}> Sign up</a>
+      </p>
     </form>
   </div>
 );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../ViewPayments.css';
 
 function ViewVerifiedPayments() {
     const [verifiedPayments, setVerifiedPayments] = useState([]);
@@ -34,14 +35,14 @@ function ViewVerifiedPayments() {
     }, [jwtToken]);
 
     return (
-        <div>
-            <h2>Verified Payments</h2>
+        <div className="container">
+            <h1>Verified Payments</h1>
             {error ? (
                 <p style={{ color: 'red' }}>Error: {error}</p>
             ) : (
                 <ul>
                     {verifiedPayments.map((payment, index) => (
-                        <li key={index}>
+                        <li className="soft-rounded-card" key={index}>
                             <p><strong>Payer Account Number:</strong> {payment.payerAccountNumber}</p>
                             <p><strong>Amount:</strong> {payment.amount}</p>
                             <p><strong>Currency:</strong> {payment.currency}</p>
