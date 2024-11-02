@@ -24,7 +24,7 @@ function App() {
                 <Route path="/view-payments" element={<ViewPayments />} />
                 <Route path="/view-verified-payments" element={<ViewVerifiedPayments />} />
                 <Route path="/Login" element={<LoginCust />} />
-                <Route path="/CustPayment" element={<CustPayment/>}/>
+                <Route path="/make" element={<CustPayment/>}/>
                 <Route
                     path="/employee-home"
                     element={isAuthenticated() ? <EmployeeHome /> : <Navigate to="/employee-login" />}
