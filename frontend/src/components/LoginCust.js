@@ -42,48 +42,55 @@ function Login() {
 
   return (
     <div className="container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          Full Name:
-          <div class="input-container">
+    <form className="form" onSubmit={handleLogin}>
+      <div className="form-group">
+        <h1 className="form-title">Customer Login</h1>
+        <div className="input-container">
           <input
             type="text"
+            placeholder="Full Name"
+            className="form-control"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             required
           />
-          </div>
-        </label>
-        <br />
-
-        <label>
-          Account Number:
+        </div>
+      </div>
+      
+      <div className="form-group">
+        <div className="input-container">
           <input
             type="text"
+            placeholder="Account Number"
+            className="form-control"
             value={accountNumber}
             onChange={(e) => setAccountNumber(e.target.value)}
             required
           />
-        </label>
-        <br />
-
-        <label>
-          Password:
+        </div>
+      </div>
+      
+      <div className="form-group">
+        <div className="input-container">
           <input
             type="password"
+            placeholder="Password"
+            className="form-control"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
-        <br />
+        </div>
+      </div>
 
-        <button type="submit">Login</button>
-      </form>
-      <p>{message}</p>
-    </div>
-  );
+      {message && <p style={{ color: 'red' }}>{message}</p>}
+      
+      <button type="submit" className="submit">
+        Login
+      </button>
+    </form>
+  </div>
+);
 }
 
 export default Login;

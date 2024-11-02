@@ -23,7 +23,7 @@ function App() {
                 <Route path="/greeting-page" element={<GreetingPage />} />
                 <Route path="/view-payments" element={<ViewPayments />} />
                 <Route path="/view-verified-payments" element={<ViewVerifiedPayments />} />
-                <Route path="/LoginCust" element={<LoginCust />} />
+                <Route path="/Login" element={<LoginCust />} />
                 <Route path="/CustPayment" element={<CustPayment/>}/>
                 <Route
                     path="/employee-home"
