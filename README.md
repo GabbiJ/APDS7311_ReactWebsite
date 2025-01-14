@@ -1,23 +1,23 @@
-Internal International Payment System
-Overview
+# Internal International Payment System (APDS7311 )
+## Overview
 The Internal International Payment System is a secure and robust backend application designed to handle Customer registration, Customer authentication, manage Customer payment transactions as well as maintain user profiles. Built with Node.js and Express, it leverages MongoDB for data storage and incorporates multiple security measures to protect against common web vulnerabilities. This system is intended for internal use within organizations to facilitate and manage international payment operations efficiently and securely.
 
-Team Members
+## Team Members
 Perla Jbara - ST10022447
-Lee Knowels - ST10051449
+Lee Knowles - ST10051449
 Mauro Coelho -ST10080441
 Gabriella Janssen - ST10034968
 Daniel Antonie - ST10186731
 
 YouTube tutorial - https://youtu.be/zI95b68un2Y
 
-Features
+## Features
 • User Registration and Authentication: Secure user signup and login using JWT (JSON Web Tokens) and password hashing.
 • Payment Processing: Allows authenticated users to make payments and view their payment history.
 • Security Enhancements: Implements rate limiting, data sanitization, secure HTTP headers, and more to safeguard against various attacks.
 • HTTPS Enforcement: Ensures all communications occur over secure HTTPS connections.
 • Comprehensive Input Validation: Validates and sanitizes all incoming data to maintain data integrity and security.
-Security Features
+### Security Features
 
 1. Rate Limiting
    • Purpose: Prevents brute-force and DDoS (Distributed Denial-of-Service) attacks by limiting the number of requests from a single IP address within a specified time frame.
@@ -43,7 +43,7 @@ Security Features
    • Purpose: Manages application errors gracefully without exposing sensitive information.
    • Implementation: Custom error-handling middleware that returns meaningful error messages while hiding stack traces in production.
 
-Defended Against Common Attacks
+### Defended Against Common Attacks
 
 1. Brute-Force Attacks: Mitigated through rate limiting on login routes, restricting the number of login attempts from a single IP.
 2. Session Hijacking: Secured via JWT authentication, ensuring tokens are signed and verified, and using secure HTTP headers to protect session data.
@@ -53,7 +53,7 @@ Defended Against Common Attacks
 6. Man-in-the-Middle (MitM) Attacks: Protected by enforcing HTTPS and setting HSTS headers to ensure all communications are encrypted.
 7. DDoS Attacks: Mitigated through global and route-specific rate limiting to control excessive traffic.
 
-Technologies Used
+### Technologies Used
 • Backend: Node.js, Express.js
 • Database: MongoDB, Mongoose
 • Authentication: JSON Web Tokens (JWT), bcryptjs
@@ -62,7 +62,7 @@ Technologies Used
 • Linting: ESLint
 • DevSecOps: GitHub Actions for CI/CD pipelines
 
-Prerequisites
+## Prerequisites
 Before setting up and running the project, ensure you have the following installed:
 • Node.js (v14.x or later)
 • npm (v6.x or later) or Yarn
@@ -70,7 +70,7 @@ Before setting up and running the project, ensure you have the following install
 • SSL Certificates: certificate.pem, privatekey.pem for HTTPS.
 • Git: For version control.
 
-Installation
+## Installation
 
 1. Clone the Repository
    bash
